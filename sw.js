@@ -4,21 +4,33 @@ const dynamicCacheName = "site-dynamic-v1";
 const assets = [
     '/',
     '/index.html',
+    '/js/app.js',
+    '/manifest.json',
     '/images/favicon.ico',
     '/images/header-wave.svg',
     '/images/mouse-scroll.svg',
     '/images/about/kowsik.jpeg',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
-    'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap',
     '/css/style.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
     'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
     'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js',
     '/js/dist/typeit.min.js',
-    '/js/script.js'
+    '/js/script.js',
+    '/fallback.html'
 ];
+
+// Limit Cache Size function
+const limitCacheSize = (name, size) => {
+    caches.open(name).then(cache => {
+        cache.keys().then(keys => {
+            if (keys.length > size) {
+                cache.delete(keys[0]).then(limitCacheSize(name, size));
+            }
+        });
+    });
+}
 
 
 // install event 
@@ -92,9 +104,17 @@ self.addEventListener('fetch', e => {
                      * we cannot use that again
                     */
                     cache.put(e.request.url, fetchResponse.clone());
+                    // Limiting Size - Here maximum of 30 items
+                    limitCacheSize(dynamicCacheName, 30);
                     return fetchResponse
                 })
             });
+        }).catch(()=> {
+            if (e.request.url.indexOf('.html') > -1)
+                return caches.match('/fallback.html');
+            /**
+             * We can add dummy for other resources like - dummy png if image not found
+            */
         })
     );
 
