@@ -30,7 +30,7 @@
 @media screen and (max-width: 800px) {
   .mynav {
     position: absolute;
-    top: 350px;
+    top: 100px;
     left: 20px;
     display: flex;
     flex-direction: column;
@@ -58,6 +58,11 @@
   font-weight: 300;
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 800px) {
+  .header .typewriter {
+    font-size: 1.5rem;
+  }
 }
 .header .scroll-img {
   margin-top: 25vh;
