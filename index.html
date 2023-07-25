@@ -114,13 +114,27 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+            <p class="text-center" style="font-weight: bold;">Whats's New?</p>
+            <div id="update-items" class="row col-lg-12 col-md-12 col-sm-12 updates">
+                <!-- <div class="row col-lg-10 col-md-10 col-sm-10 item">
+                    <div class="col-lg-1 col-md-2 col-sm-12 item-date">12 Jul 2023</div>
+                    <div class="col-lg-2 col-md-4 col-sm-12 item-title">IIT GN Research</div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 item-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </div>
 
     <!-- <span class="row m-5 col-12" ></span> -->
 
-    
+    <!-- <span class="row m-5 col-12" ></span> -->
 
-    <span class="row m-5 col-12" ></span>
+
 
     <!-- PWA -->
     <script src="./js/app.js" type="text/javascript"></script>
@@ -130,6 +144,34 @@
     <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js"></script>
     <script src="./js/dist/typeit.min.js" type="text/javascript"></script>
     <script src="./js/script.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        let loading = `<center><div class="loader-page"></div></center>`;
+
+        let get_updates = async() => {
+            let response = await fetch('https://dkowsikpai.pythonanywhere.com/update_list');
+            let data = await response.json();
+            return data;
+        }
+        
+        
+        $('#update-items').empty().append(loading);
+        fetch('https://dkowsikpai.pythonanywhere.com/update_list').then(res => res.json()).then(res => {
+            $('#update-items').empty();
+            console.log(res);
+            for(let i=0; i<res.list.length; i++){
+                let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
+                                <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].title}</div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
+                            </a>`;
+                $('#update-items').append(item);
+            }
+        });       
+        
+        
+
+        </script>
 
 </body>
 </html>
