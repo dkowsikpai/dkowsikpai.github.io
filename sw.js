@@ -2,23 +2,23 @@ const staticCacheName = "site-static-v2";
 const dynamicCacheName = "site-dynamic-v1";
 // Assets will take the URL to the assets
 const assets = [
-    '/',
-    '/index.html',
-    '/js/app.js',
-    '/manifest.json',
-    '/images/favicon.ico',
-    '/images/header-wave.svg',
-    '/images/mouse-scroll.svg',
-    '/images/about/kowsik.jpeg',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
-    '/css/style.css',
-    'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
-    'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js',
-    '/js/dist/typeit.min.js',
-    '/js/script.js',
-    '/fallback.html'
+    // '/',
+    // '/index.html',
+    // '/js/app.js',
+    // '/manifest.json',
+    // '/images/favicon.ico',
+    // '/images/header-wave.svg',
+    // '/images/mouse-scroll.svg',
+    // '/images/about/kowsik.jpeg',
+    // 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
+    // '/css/style.css',
+    // 'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.css',
+    // 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+    // 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
+    // 'https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js',
+    // '/js/dist/typeit.min.js',
+    // '/js/script.js',
+    // '/fallback.html'
 ];
 
 // Limit Cache Size function
