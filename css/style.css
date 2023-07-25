@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .mynav {
@@ -50,9 +50,9 @@
 }
 .header .hi-text h2 {
   margin-top: 40vh;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 3.5rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
 }
 .header .typewriter {
   font-weight: 300;
@@ -109,7 +109,7 @@
   margin: 20px 0 30px 0;
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: left;
   justify-content: center;
   align-items: center;
 }
@@ -121,7 +121,7 @@
   color: #000000;
   font-size: 20px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .about .about-img-div {
     display: flex !important;
     justify-content: center;
@@ -129,15 +129,8 @@
   }
   .about img {
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .about img {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
   }
 }
 
