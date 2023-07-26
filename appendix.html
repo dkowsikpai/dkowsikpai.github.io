@@ -70,11 +70,11 @@
                 $('#markdown').empty();
                 console.log(res);
                 if (res.success === true) {
-                    let d = res.item.md;
-                    var converter = new showdown.Converter();
-                    var text = d;
-                    var html = converter.makeHtml(text);
-                    document.getElementById("markdown").innerHTML = html;
+                    // let d = res.item.md;
+                    // var converter = new showdown.Converter();
+                    // var text = d;
+                    // var html = converter.makeHtml(text);
+                    $("#markdown").empty().append(res.item.md);
                 } else {
                     window.location.href = "./index.html";
                 }
