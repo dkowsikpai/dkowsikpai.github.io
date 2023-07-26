@@ -162,7 +162,7 @@
             for(let i=0; i<res.list.length; i++){
                 let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
                                 <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].title}</div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
                             </a>`;
                 $('#update-items').append(item);
