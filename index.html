@@ -125,20 +125,26 @@
         <div class="row col-lg-12 col-md-12 col-sm-12">
             <p class="text-center" style="font-weight: bold;">Whats's New?</p>
             <div id="update-items" class="row col-lg-12 col-md-12 col-sm-12 updates">
-                <!-- <div class="row col-lg-10 col-md-10 col-sm-10 item">
-                    <div class="col-lg-1 col-md-2 col-sm-12 item-date">12 Jul 2023</div>
-                    <div class="col-lg-2 col-md-4 col-sm-12 item-title">IIT GN Research</div>
-                    <div class="col-lg-8 col-md-8 col-sm-12 item-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </div>
-                </div> -->
+                <!-- News -->
+            </div>
+            <p class="text-center" style="font-weight: bold;">Research Works</p>
+            <div id="update-items-research" class="row col-lg-12 col-md-12 col-sm-12 updates">
+                <!-- Research -->
+            </div>
+            <p class="text-center" style="font-weight: bold;">Projects</p>
+            <div id="update-items-projects" class="row col-lg-12 col-md-12 col-sm-12 updates">
+                <!-- Project -->
+            </div>
+            <p class="text-center" style="font-weight: bold;">Fun Facts</p>
+            <div id="update-items-others" class="row col-lg-12 col-md-12 col-sm-12 updates">
+                <!-- Others -->
             </div>
         </div>
     </div>
 
     <!-- <span class="row m-5 col-12" ></span> -->
 
-    <!-- <span class="row m-5 col-12" ></span> -->
+    <span class="row m-5 col-12" ></span>
 
 
 
@@ -165,13 +171,47 @@
         fetch('https://dkowsikpai.pythonanywhere.com/update_list').then(res => res.json()).then(res => {
             $('#update-items').empty();
             // console.log(res);
+
+            // let categorised = {};
+            // for(let i=0; i<res.list.length; i++){
+            //     if(categorised[res.list[i].category] == undefined){
+            //         categorised[res.list[i].category] = [];
+            //     }
+            //     categorised[res.list[i].category].push(res.list[i]);
+            // }
+
+            
+
             for(let i=0; i<res.list.length; i++){
-                let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
-                                <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
-                            </a>`;
-                $('#update-items').append(item);
+                if (res.list[i].category == "News") {
+                    let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
+                            <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
+                        </a>`;
+                    $('#update-items').append(item);
+                } else if (res.list[i].category == "Research") {
+                    let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
+                            <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
+                        </a>`;
+                    $('#update-items-research').append(item);
+                } else if (res.list[i].category == "Project") {
+                    let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
+                            <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
+                        </a>`;
+                    $('#update-items-projects').append(item);
+                } else {
+                    let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
+                            <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 item-title">${res.list[i].emoji} ${res.list[i].title}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 item-desc">${res.list[i].description} <i class="fas fa-arrow-right" style="color: #00d394;"></i> </div>
+                        </a>`;
+                    $('#update-items-others').append(item);
+                }
             }
         });       
         
