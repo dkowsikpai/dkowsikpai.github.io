@@ -109,6 +109,7 @@
   border-radius: 50%;
   height: 350px;
   width: 350px;
+  text-align: center;
 }
 .about .about-description {
   margin: 20px 0 30px 0;
@@ -126,11 +127,22 @@
   color: #000000;
   font-size: 20px;
 }
+.about .about-img-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.about .my-name {
+  margin-top: 10px;
+}
 @media screen and (max-width: 1200px) {
   .about .about-img-div {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   .about img {
     border-radius: 50%;

@@ -81,16 +81,22 @@
             <div class="row col-lg-10 col-md-12 col-sm-10 mx-auto abt">
                 <div class="col-lg-4 col-md-4 col-sm-12 about-img-div">
                     <img class="" src="./images/about/casual-1mb.jpg">
+                    <p class="my-name">
+                        <b>Kowsik Nandagopan D</b> <br>
+                        MTech Student, IIT Gandhinagar <br>
+                        <span style="color: #5e5e5e; font-weight: 400;">dkowsik(at)iitgn.ac.in</span>
+                    </p>
                 </div>
                 <div class="row col-lg-8 col-md-8 col-sm-12 about-description">
                     <div class="row" >
                         <p class="">
-                            <b>Kowsik Nandagopan D - Unleashing the Magic of NLP and Beyond! &#x2728</b> <br>
+                            <b>Unleashing the Magic of NLP and Beyond! &#x2728</b> <br>
                             &#x1F680 An NLP enthusiast, soaring high with a fervor for DL/ML, full-stack, and mobile development. A skilled DL/ML Engineer, proving expertise through tangible accomplishments.
                             <ul style="list-style-type: none;">
-                                <li>&#x1F52D Currently pursuing M.Tech in Computer Science and Engineering from <a target="_blank" href="https://iitgn.ac.in/">IIT Gandhinagar</a>.</li>
-                                <li>&#x1F331 Specializing in the captivating realm of NLP, mentored by the esteemed <a target="_blank" href="https://mayank4490.github.io/">Prof. Mayank Singh</a>.</li>
+                                <li>&#x1F52D Currently pursuing <i>M.Tech in Computer Science and Engineering</i> from <a target="_blank" href="https://iitgn.ac.in/">IIT Gandhinagar</a>.</li>
+                                <li>&#x1F331 Specializing in the captivating realm of NLP, mentored by the esteemed <a target="_blank" href="https://mayank4490.github.io/">Prof. Mayank Singh</a> at <a href="https://labs.iitgn.ac.in/lingo/">Lingo Lab</a> IITGN.</li>
                                 <li>&#x2705 Embarked on the journey with a B.Tech in Computer Science from <a target="_blank" href="http://gectcr.ac.in/">Government Engineering College, Thrissur</a>.</li>
+                                <!-- <li>&#x1F44D </li> -->
                             </ul>
                         </p>
                     </div>
@@ -158,7 +164,7 @@
         $('#update-items').empty().append(loading);
         fetch('https://dkowsikpai.pythonanywhere.com/update_list').then(res => res.json()).then(res => {
             $('#update-items').empty();
-            console.log(res);
+            // console.log(res);
             for(let i=0; i<res.list.length; i++){
                 let item = `<a href="./appendix.html?id=${res.list[i].id}" class="row col-lg-10 col-md-10 col-sm-10 item">
                                 <div class="col-lg-2 col-md-2 col-sm-12 item-date">${res.list[i].created_at}</div>
