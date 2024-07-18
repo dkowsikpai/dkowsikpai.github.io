@@ -2,9 +2,7 @@ $(document).ready(()=>{
     let list = []
     list.push("AI/ML Researcher");
     list.push("Full Stack developer");
-    list.push("Flutter developer");
-    list.push("Android developer");
-
+    list.push("Mobile App developer");
     // alert($('#typewriter').length);
 
     let typ = new TypeIt("#typewriter", {
