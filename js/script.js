@@ -1,5 +1,6 @@
 $(document).ready(()=>{
     let list = []
+    list.push("a Scientist");
     list.push("AI/ML Researcher");
     list.push("Full Stack developer");
     list.push("Mobile App developer");
